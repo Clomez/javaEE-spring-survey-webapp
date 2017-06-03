@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Frontpage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" th:href="@{/static/theme.css}"
+          href="../static/theme.css"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Survey</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Frontpage</a></li>
+                <li class="active"><a href="/manage">Manage</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="starter-template">
+
+        <div class="col-sm-12">
+            <form method="post" action="/addSurvey">
+                <table class="table table-hover">
+
+                    <tr>
+                        <td>Give Survey title:<input type="text" name="name" /></td>
+                    </tr>
+
+                </table>
+                <button type="submit" class="btn btn-default">Create Survey</button>
+            </form>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
