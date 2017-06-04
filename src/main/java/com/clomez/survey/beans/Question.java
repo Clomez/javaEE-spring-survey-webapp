@@ -36,7 +36,7 @@ public class Question {
     }
 
     public Question setSurveyid(int surveyid) {
-        Surveyid = surveyid;
+        this.Surveyid = surveyid;
         return this;
     }
 

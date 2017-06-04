@@ -20,8 +20,6 @@ public class SurveyRowMapper implements RowMapper {
         survey.setId(rs.getInt("id"));
         survey.setName(rs.getString("name"));
 
-
-
         return survey;
 
 

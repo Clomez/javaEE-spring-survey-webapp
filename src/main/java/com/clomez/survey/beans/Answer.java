@@ -6,8 +6,8 @@ package com.clomez.survey.beans;
 public class Answer {
 
     public String name;
-    int question_id;
-    int answer_group;
+    private int question_id;
+    private int answer_group;
 
     public Answer(String name, int question_id, int answer_group) {
         this.name = name;

@@ -1,9 +1,11 @@
+
+
+
  CREATE TABLE question (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-survey_id VARCHAR(30) NOT NULL,
+survey_id INT(6) NOT NULL,
 type VARCHAR(30) NOT NULL,
-name VARCHAR(50),
-surveyId INT(6),
+name VARCHAR(100),
 reg_date TIMESTAMP
 );
 
@@ -18,7 +20,7 @@ reg_date TIMESTAMP
 
  CREATE TABLE answer (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(30) NOT NULL,
+name VARCHAR(500) NOT NULL,
 question_id INT(6),
 answer_group INT(6)
 );

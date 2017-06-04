@@ -9,8 +9,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 public class CustomDataSource {
 
-    private static final String user = "xxx";
-    private static final String password = "xxxxx";
+    private static final String user = "survey";
+    private static final String password = "password";
     private static final String url = "jdbc:mysql://localhost:3306/survey";
     private static final  String driverClassName = "com.mysql.jdbc.Driver";
 

@@ -33,17 +33,21 @@
 
         <div class="col-sm-12">
 
-            <form method="post" action="saveAnswer">
-            <table class="table table-hover">
-                <h1></h1>
-                <tr th:each="survey : ${survey}">
-                    <td th:text="${survey.name}"></td>
-                    <td><textarea rows="4" cols="50" name="answer">Answer text</textarea></td>
-                </tr>
+                <table class="table table-hover">
 
-            </table>
-                <input type="submit" value="Submit" />
-            </form>
+                    <tr th:each="survey : ${survey}">
+                        <td th:text="${survey.name}">
+
+                            <table class="second table">
+                                <tr th:each="answer : ${answer}">
+                                    <td th:text="${answer.name}"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
         </div>
 
 

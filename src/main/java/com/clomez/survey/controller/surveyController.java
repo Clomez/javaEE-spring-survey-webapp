@@ -18,10 +18,10 @@ import java.util.List;
 @Controller
 public class surveyController {
 
-    SurveyDAO surveyDAO = new SurveyDAO();
-    Survey surveyS = new Survey();
-    Answer answerS = new Answer();
-    List<Integer> help = new ArrayList<>();
+    private SurveyDAO surveyDAO = new SurveyDAO();
+    private Survey surveyS = new Survey();
+    private Answer answerS = new Answer();
+    private List<Integer> help = new ArrayList<>();
 
     //INDEX
     @RequestMapping("/")
@@ -48,28 +48,26 @@ public class surveyController {
     @RequestMapping(value = "/saveAnswer", method = RequestMethod.POST)
     public String saveAnswer(@RequestParam("answer")List<String> answerL){
 
-            //SET SURVEY ID TO ANSWER
-            int idS = surveyS.getId();
-            answerS.setAnswer_group(idS);
+        //SET SURVEY ID TO ANSWER
+        int idS = surveyS.getId();
+        answerS.setAnswer_group(idS);
 
-            for (int i = 0; i<answerL.size(); i++) {
-                //SET VALUE FOR ANSWER
-                answerS.setName(answerL.get(i));
-                //SET QUESTION ID TO ANSWE
-                answerS.setQuestion_id(help.get(i));
-                //SET SAVE ANSWER
-                surveyDAO.saveAnserws(answerS);
-            }
-            return "thanks";
+        for (int i = 0; i<answerL.size(); i++) {
+            //SET VALUE FOR ANSWER
+            answerS.setName(answerL.get(i));
+            //SET QUESTION ID TO ANSWER
+            answerS.setQuestion_id(help.get(i));
+            //SET SAVE ANSWER
+            surveyDAO.saveAnserws(answerS);
+        }
+        return "thanks";
 
     }
 
     // CREATE NEW SURVEY PAGE
     @RequestMapping("/createSurvey")
     public String createNew (){
-
         return "createSurvey";
-
     }
 
     //CREATE THE ACTUAL SURVEY POST
@@ -104,6 +102,18 @@ public class surveyController {
         model.addAttribute("survey", survey);
 
         return "redirect:/createQuestion?id=" + id;
+    }
+
+
+    //SHOW ANSERWS
+    @RequestMapping("/showAnswers")
+    public String showAnswers(@RequestParam(value="id", required = false, defaultValue = "1") int id, Model model){
+        List<Question> survey = surveyDAO.getSurveyById(id);
+        List<Answer> answer = surveyDAO.getAnswers(id);
+        model.addAttribute("answer", answer);
+        model.addAttribute("survey", survey);
+
+        return "showAnswers";
     }
 
 }
