@@ -5,7 +5,7 @@ This here is JavaEE8 based webapp to make and answer surveys in browser.
 
 INFO:<br><br>
 
-SURVEY-JAVA-WEBAPP 0.9<br>
+SURVEY-JAVA-WEBAPP 0.9.5<br>
 JAVA-SURVEY-APPLICATION WITH BROWSER GUI<br>
 LICENCE: MIT<br>
 AUTHOR: CLOMEZ<br><br>
@@ -14,7 +14,8 @@ JavaEE 8<br>
 MySQL<br>
 Maven<br>
 Spring-boot<br>
-Thymeleaf<br><br>
+Thymeleaf<br>
+Bootstrap<br><br>
 ////////////////////
 FEATURES<br>
 
@@ -26,6 +27,12 @@ FEATURES<br>
 
 ////////////////////
 LOGS<br>
+
+0.9.5<br>
+ - looking better
+ - better gui
+ - answers are browsable
+
 
 0.9<br>
  - looking better

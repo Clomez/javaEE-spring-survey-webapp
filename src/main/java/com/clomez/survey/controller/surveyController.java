@@ -84,6 +84,7 @@ public class surveyController {
     //CREATE QUESTIONS PAGE
     @RequestMapping("/createQuestion")
     public String createSurvey(@RequestParam(value="id", required = false, defaultValue = "1") int id, Model model){
+        surveyS.setId(id);
         List<Question> survey = surveyDAO.getSurveyById(id);
         model.addAttribute("survey", survey);
         return "addQuestion";
@@ -103,9 +104,19 @@ public class surveyController {
 
         return "redirect:/createQuestion?id=" + id;
     }
+    //SHOW ANSWER PAGE FROM LINK
+    @RequestMapping(value = "/ShowAnswer", method = RequestMethod.POST)
+    public String ShowAnswer(Model model, @ModelAttribute("AnswerId")int id){
+        return "redirect:/showAnswers?id=" + id;
+    }
+    //SHOW ADD QUESTION PAGE
+    @RequestMapping(value = "/addQuestionspage", method = RequestMethod.POST)
+    public String ShowQuestionPage(Model model, @ModelAttribute("addQuestionspage")int id){
+        return "redirect:/createQuestion?id=" +id ;
+    }
 
 
-    //SHOW ANSERWS
+    //SHOW ANSERWS RESPONSE
     @RequestMapping("/showAnswers")
     public String showAnswers(@RequestParam(value="id", required = false, defaultValue = "1") int id, Model model){
         List<Question> survey = surveyDAO.getSurveyById(id);
