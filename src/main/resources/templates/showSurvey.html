@@ -29,23 +29,20 @@
 
 <div class="container">
 
-    <div class="starter-template">
-
-        <div class="col-sm-12">
+    <div class="jumbotron">
 
             <form method="post" action="saveAnswer">
-            <table class="table table-hover">
-                <h1></h1>
+            <table>
                 <tr th:each="survey : ${survey}">
-                    <td th:text="${survey.name}"></td>
-                    <td><textarea rows="4" cols="50" name="answer">Answer text</textarea></td>
+                    <div class="container">
+                        <td> <h2 style="text-align: center;" th:text="${survey.name}"></h2><br /></td>
+                        <td><textarea rows="3" cols="40" name="answer">Answer text</textarea></td>
+                    </div>
                 </tr>
 
             </table>
-                <input type="submit" value="Submit" />
+                <input type="submit"  class="btn btn-default" value="Submit" />
             </form>
-        </div>
-
 
     </div>
 

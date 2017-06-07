@@ -3,5 +3,9 @@ h1{
 }
 
 h2{
-    color:#000000;
+    color: #4a4a4a ;
+}
+.jumbotron {
+    border-radius: 8px;
+    background-color: honeydew;
 }
